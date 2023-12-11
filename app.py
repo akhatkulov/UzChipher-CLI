@@ -13,7 +13,6 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
     os.system('clear')
     if x == "home":
         print(pyfiglet.figlet_format("UzChipher",font='slant',justify='center',width=150))
-        print(pyfiglet.figlet_format("Develope by Akhatkulov",justify='center'))
 
 
 ######################This section about uzbek language  #################################################
