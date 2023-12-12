@@ -125,7 +125,7 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
         except:
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
 ##################### This section about English ##################################################
-    elif x == "hill" and mode == "m--encode" and lang == "uz":
+    elif x == "hill" and mode == "m--encode" and lang == "en":
         try:
             hill_txt = typer.prompt("Send the text you want to encrypt")
             hill_code = typer.prompt("Enter a passwor for encrypt")
@@ -138,10 +138,10 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
             typer.secho("Sizning \"HILL\" usulida matningiz shifrlandi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(hill_table,headers="firstrow",tablefmt="psql"))
         except ZeroDivisionError:
-            typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
+            typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
 
 
-    elif x == "hill" and mode == "m--decode" and lang == "uz":
+    elif x == "hill" and mode == "m--decode" and lang == "en":
         try:
             hill_txt = typer.prompt("Send to text you want to decrypt")
             hill_code = typer.prompt("Enter a passwor for decrypt")
@@ -155,9 +155,9 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
             print(tabulate(hill_table,headers="firstrow",tablefmt="psql"))
 
         except ZeroDivisionError:
-            typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
+            typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
 
-    elif x == "morse" and mode == "m--encode" and lang == "uz":
+    elif x == "morse" and mode == "m--encode" and lang == "en":
         try:
             morse_txt = typer.prompt("Give me text to encode ")
             morse_result = typer.style(text_to_morse(morse_txt),fg=typer.colors.BLUE)
@@ -168,8 +168,8 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
             typer.secho(f"Sizning matningiz \"MORSE\"usulida kodlandi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(morse_table,headers="firstrow",tablefmt="psql"))
         except:
-            typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
-    elif x == "morse" and mode == "m--decode" and lang == "uz":
+            typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
+    elif x == "morse" and mode == "m--decode" and lang == "en":
         try:
             morse_txt = typer.prompt("Giv me text to decode")
             morse_result = typer.style(morse_to_text(morse_txt),fg=typer.colors.RED)
@@ -180,8 +180,8 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
             typer.secho(f"Sizning matningiz \"MORSE\"usulida koddan chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(morse_table,headers="firstrow",tablefmt="psql"))
         except:
-            typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
-    elif x == "caesar" and mode == "m--encode" and lang == "uz":
+            typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
+    elif x == "caesar" and mode == "m--encode" and lang == "en":
         try:
             caesar_txt = typer.prompt("Send the text you want to encrypt")
             caesar_num = typer.prompt("Send one of the numbers from 1 to 27")
@@ -193,9 +193,9 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
             typer.secho("Sizning \"Sizar\" usulida matningiz shifrlandi chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(caesar_table,headers="firstrow",tablefmt="psql"))
         except:
-            typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
+            typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
         
-    elif x == "caesar" and mode == "m--decode" and lang == "uz":
+    elif x == "caesar" and mode == "m--decode" and lang == "en":
         try:
             caesar_txt = typer.prompt("Send the text you want to decrypt")
             caesar_num = typer.prompt("Send one number of the number from 1 to 27")
@@ -207,8 +207,8 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
             typer.secho("Sizning \"Sizar\" usulida matningiz shifrdan chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(caesar_table,headers="firstrow",tablefmt="psql"))
         except:
-            typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
-    elif x == "mirage" and  mode == "m--encode" and lang == "uz":
+            typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
+    elif x == "mirage" and  mode == "m--encode" and lang == "en":
         try:
             mirage_txt = typer.prompt("Give me text to encode")
             mirage_res = typer.style(en_mirage(mirage_txt),fg=typer.colors.RED)
@@ -220,7 +220,7 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
             print(tabulate(mirage_table,headers="firstrow",tablefmt="psql"))
         except:
             typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
-    elif x == "mirage" and mode == "m--decode" and lang == "uz":
+    elif x == "mirage" and mode == "m--decode" and lang == "en":
         try:
             mirage_txt = typer.prompt("Give me text to decode")
             mirage_res = typer.style(de_mirage(mirage_txt),fg=typer.colors.RED)
