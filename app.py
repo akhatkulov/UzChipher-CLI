@@ -63,13 +63,13 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
     elif x == "morse" and mode == "m--decode" and lang == "uz":
         try:
-            morse_txt = typer.prompt("Shifrdan chiqarmoqchi bo'lgan matningizni yuboring")
+            morse_txt = typer.prompt("Koddan chiqarmoqchi bo'lgan matningizni yuboring")
             morse_result = typer.style(morse_to_text(morse_txt),fg=typer.colors.RED)
             morse_table = [
                 [f"Kodlangan matn",f"Asl matn"],
                 [f"{typer.style(morse_txt,fg=typer.colors.RED)}",f"{morse_result}"]
             ]
-            typer.echo(f"Sizning matningiz \"MORSE\"usulida koddan chiqarildi",fg=typer.colors.CYAN,bold=True)
+            typer.secho(f"Sizning matningiz \"MORSE\"usulida koddan chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(morse_table,headers="firstrow",tablefmt="psql"))
         except:
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
@@ -84,7 +84,7 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
             ]
             typer.secho("Sizning \"Sizar\" usulida matningiz shifrlandi chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(caesar_table,headers="firstrow",tablefmt="psql"))
-        except ZeroDivisionError:
+        except:
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
         
     elif x == "caesar" and mode == "m--decode" and lang == "uz":
@@ -94,10 +94,10 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
             caesar_res = typer.style(caesar_decipher(caesar_txt,caesar_num),fg=typer.colors.BLACK)
             caesar_table = [
                 [f"{typer.style('Shifr paroli',fg=typer.colors.GREEN)}",f"{typer.style('Natija',fg=typer.colors.GREEN)}"],
-                [f"{typer.echo(caesar_num,fg=typer.colors.RED)}",f"{caesar_res}"],
+                [f"{typer.style(caesar_num,fg=typer.colors.RED)}",f"{caesar_res}"],
             ]
             typer.secho("Sizning \"Sizar\" usulida matningiz shifrdan chiqarildi",fg=typer.colors.CYAN,bold=True)
-            print(tabulate(hill_table,headers="firstrow",tablefmt="psql"))
+            print(tabulate(caesar_table,headers="firstrow",tablefmt="psql"))
         except:
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
     elif x == "mirage" and  mode == "m--encode" and lang == "uz":
