@@ -17,7 +17,7 @@
 <b>Windows Application</b> <a href=""> --- </a> <br>
 <b>Linux Application</b> <a href=""> --- </a> <br>
 <hr>
-<h1 id="install">How to install?</h1>
+<h1 id="install">✅How to install?</h1>
 <h3>There are two ways to install the program.</h3>
 <h4>The first way: </h4> 
 
