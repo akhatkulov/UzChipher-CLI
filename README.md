@@ -1,4 +1,4 @@
-<b style="text-align: center;"> <h1> ⚡UzChipher - CLI⚡ </h1> </b>
+<b style="text-align: center;"> <h1> ⚡⚡UzChipher - CLI </h1> </b>
 <hr>
 <i>Why is the program called UzChipher? </i> <br>
 <p>The reason why I named the program in German is that cryptography started with my interest in German cryptographers.</p> <br>
