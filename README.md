@@ -19,7 +19,7 @@
 <h1>How to install?</h1>
 <h3>There are two ways to install the program.</h3>
 The first way: <br>
-```shell
-<code>git clone https://github.com/akhatkulov/UzChipher-CLI.git</code>
-```
+
+<copy>git clone https://github.com/akhatkulov/UzChipher-CLI.git</copy>
+
 
