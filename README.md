@@ -14,8 +14,8 @@
 <h3 id="apps">📥You can also use other views of the program!</h3> <br>
 <b>Telegram Bot:</b> <a href="https://t.me/UzChipher_Bot">LINK</a> <br>
 <b>📲Web Application:</b> <a href=""> --- </a> <br>
-<b>Windows Application</b> <a href=""> --- </a> <br>
-<b>Linux Application</b> <a href=""> --- </a> <br>
+<b>💻Windows Application</b> <a href=""> --- </a> <br>
+<b>🐧Linux Application</b> <a href=""> --- </a> <br>
 <hr>
 <h1 id="install">📁	How to install?</h1>
 <h3>There are two ways to install the program.</h3>
