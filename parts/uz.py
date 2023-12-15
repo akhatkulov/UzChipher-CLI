@@ -89,7 +89,7 @@ def caesar_encode_uz():
             print(tabulate(caesar_table,headers="firstrow",tablefmt="psql"))
         except:
             loading_func()
-            typer.secho("Siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
+            typer.secho("Siz xatoga yo'l qo'ydingiz foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
 def caesar_decode_uz():
         try:
             caesar_txt = typer.prompt("Shifrdan chiqarmoqchi bo'lgan matningizni yuboring")
