@@ -63,6 +63,6 @@ For example: <code>python3 app.py hill m--encode uz</code>
 Run:<code>python3 app.py</code>
 <hr>
 
-<h2>I'm glad you found my program useful, if you have any questions, please contact me</h2>
+<h2>I'm glad you found my program useful, if you have any questions, please contact me!</h2>
 <h2>Contact: <a href="https://t.me/akhatkulov">LINK</a></h2>
 <br> <br>
