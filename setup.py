@@ -17,18 +17,21 @@ if a == 1:
     os.system("yay -S yay -S python-inquirer")
     os.system('sudo pacman -S python-tabulate')
     print('done!')
+    os.system("python3 app.py")
 elif a == 2:
     print('Installing...')
     os.system('pip install typer')
     os.system('pip install inquirer')
     os.system('pip install tabulate')
     print('done!')
+    os.system("python3 app.py")
 elif a == 3:
     print('Installing...')
     os.system('pip install typer')
     os.system('pip install inquirer')
     os.system('pip install tabulate')
     print('done!')
+    os.system("python3 app.py")
 elif a == 4:
 
     print('Installing...')
@@ -36,10 +39,12 @@ elif a == 4:
     os.system('pip install inquirer')
     os.system('pip install tabulate')
     print('done!')
+    os.system("python3 app.py")
 else:
     print('Installing...')
     os.system('pip install typer')
     os.system('pip install inquirer')
     os.system('pip install tabulate')
     print('done!')
+    os.system("python3 app.py")
 
