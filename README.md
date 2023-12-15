@@ -16,6 +16,9 @@
 <b>Windows Application</b> <a href=""> --- </a> <br>
 <b>Linux Application</b> <a href=""> --- </a> <br>
 <hr>
-
+<h1>How to install?</h1>
+<h3>There are two ways to install the program.</h3>
+The first way:
+<code>git clone </code>
 
 
