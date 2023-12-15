@@ -1,0 +1,21 @@
+---------------------------sezar--------------------------------------
+
+caesar_encipher --- shifrlash
+caesar_decipher --- shifrdan chiqarish
+
+---------------------------hill------------------------------------
+hillEncrypt --- shifrlash
+hillDecrypt --- shefrdan chiqarish
+
+--------------------------Mirage-------------------------------------
+en_mirage --- shifrlash
+de_mirage --- shifrdan chiqarish 
+
+--------------------------Morse-----------------------------
+
+text_to_morse ---------- shifrlash 
+morse_to_text ----------- shifrdan chiqarish 
+
+
+
+

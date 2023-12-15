@@ -2,17 +2,28 @@
 import typer
 from typing import Optional
 import os
-import pyfiglet
 from tabulate import tabulate
-################ My Cryptography Codes #####################
-from connecter import *
+import inquirer
+import time
+from yaspin import yaspin
+from yaspin.spinners import Spinners
 
-# os.system('clear')
+################ My Cryptography Codes #####################
+from cipher_codes import * 
+from helper import *
 ################ Start Typer Coding #####################################
 def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional[str]= typer.Argument('m--encode',help='Mode') , lang: Optional[str] =  typer.Argument('en',help="Program's Language")):
     os.system('clear')
     if x == "home":
-        print(pyfiglet.figlet_format("UzChipher",font='slant',justify='center',width=150))
+        home_page()
+##############################################################################################
+        loading_func()
+        start_cli()
+        with open('data/lang.txt','r+') as f:
+            lang = f.read()
+            if lang == "Uzbek":
+                uzbek_lang()
+    
         
 
 
@@ -27,9 +38,11 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"{typer.style('Asl matn',fg=typer.colors.GREEN)}",f"{typer.style('Shifr paroli',fg=typer.colors.GREEN)}",f"{typer.style('Natija',fg=typer.colors.GREEN)}"],
                 [f"{typer.style(hill_txt,fg=typer.colors.BLUE)}",f"{hill_code}",f"{hill_result}"],
             ]
+            loading_func()
             typer.secho("Sizning \"HILL\" usulida matningiz shifrlandi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(hill_table,headers="firstrow",tablefmt="psql"))
         except ZeroDivisionError:
+            loading_func()
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
 
 
@@ -43,10 +56,12 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"{typer.style('Shifrlangan matn',fg=typer.colors.GREEN)}",f"{typer.style('Shifr paroli',fg=typer.colors.GREEN)}",f"{typer.style('Natija',fg=typer.colors.GREEN)}"],
                 [f"{typer.style(hill_txt,fg=typer.colors.BLUE)}",f"{hill_code}",f"{hill_result}"],
             ]
+            loading_func()
             typer.secho("Sizning \"HILL\" usulida matningiz shifrdan chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(hill_table,headers="firstrow",tablefmt="psql"))
 
         except ZeroDivisionError:
+            loading_func()
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
 
     elif x == "morse" and mode == "m--encode" and lang == "uz":
@@ -57,21 +72,26 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"Asl matn",f"Kodlangan matn"],
                 [f"{typer.style(morse_txt,fg=typer.colors.RED)}",f"{morse_result}"]
             ]
+            loading_func()
             typer.secho(f"Sizning matningiz \"MORSE\"usulida kodlandi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(morse_table,headers="firstrow",tablefmt="psql"))
         except:
+            loading_func()
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
     elif x == "morse" and mode == "m--decode" and lang == "uz":
         try:
+            
             morse_txt = typer.prompt("Koddan chiqarmoqchi bo'lgan matningizni yuboring")
             morse_result = typer.style(morse_to_text(morse_txt),fg=typer.colors.RED)
             morse_table = [
                 [f"Kodlangan matn",f"Asl matn"],
                 [f"{typer.style(morse_txt,fg=typer.colors.RED)}",f"{morse_result}"]
             ]
+            loading_func()
             typer.secho(f"Sizning matningiz \"MORSE\"usulida koddan chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(morse_table,headers="firstrow",tablefmt="psql"))
         except:
+            loading_func()
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
     elif x == "caesar" and mode == "m--encode" and lang == "uz":
         try:
@@ -82,9 +102,11 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"{typer.style('Asl matn',fg=typer.colors.GREEN)}",f"{typer.style('Shifr paroli',fg=typer.colors.GREEN)}",f"{typer.style('Natija',fg=typer.colors.GREEN)}"],
                 [f"{typer.style(caesar_txt,fg=typer.colors.BLUE)}"f"{typer.style(caesar_num,fg=typer.colors.RED)}",f"{caesar_res}"],
             ]
+            loading_func()
             typer.secho("Sizning \"Sizar\" usulida matningiz shifrlandi chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(caesar_table,headers="firstrow",tablefmt="psql"))
         except:
+            loading_func()
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
         
     elif x == "caesar" and mode == "m--decode" and lang == "uz":
@@ -96,9 +118,11 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"{typer.style('Shifr matni',fg=typer.colors.GREEN)},"f"{typer.style('Shifr paroli',fg=typer.colors.GREEN)}",f"{typer.style('Natija',fg=typer.colors.GREEN)}"],
                 [f"{typer.style(caesar_txt,fg=typer.colors.BLUE)}",f"{typer.style(caesar_num,fg=typer.colors.RED)}",f"{caesar_res}"],
             ]
+            loading_func()
             typer.secho("Sizning \"Sizar\" usulida matningiz shifrdan chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(caesar_table,headers="firstrow",tablefmt="psql"))
         except:
+            loading_func()
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
     elif x == "mirage" and  mode == "m--encode" and lang == "uz":
         try:
@@ -108,9 +132,11 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"Asl matn",f"Kodlangan matn"]
                 [f"{typer.style(mirage_txt,fg=typer.colors.RED)}",f"{mirage_res}"]
             ]
+            loading_func()
             typer.echo(f"Sizning matningiz \"Mirage\" usulida kodlandi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(mirage_table,headers="firstrow",tablefmt="psql"))
         except:
+            loading_func()
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
     elif x == "mirage" and mode == "m--decode" and lang == "uz":
         try:
@@ -120,9 +146,11 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"Asl matn",f"Kodlangan matn"]
                 [f"{typer.style(mirage_txt,fg=typer.colors.RED)}",f"{mirage_res}"]
             ]
+            loading_func()
             typer.echo(f"Sizning matningiz \"Mirage\"usulida koddan chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(mirage_table,headers="firstrow",tablefmt="psql"))
         except:
+            loading_func()
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
 ##################### This section about English ##################################################
     elif x == "hill" and mode == "m--encode" and lang == "en":
@@ -135,9 +163,11 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"{typer.style('Asl matn',fg=typer.colors.GREEN)}",f"{typer.style('Shifr paroli',fg=typer.colors.GREEN)}",f"{typer.style('Natija',fg=typer.colors.GREEN)}"],
                 [f"{typer.style(hill_txt,fg=typer.colors.BLUE)}",f"{hill_code}",f"{hill_result}"],
             ]
-            typer.secho("Sizning \"HILL\" usulida matningiz shifrlandi",fg=typer.colors.CYAN,bold=True)
+            loading_func()
+            typer.secho("Sizning matningiz \"HILL\" usulida matningiz shifrlandi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(hill_table,headers="firstrow",tablefmt="psql"))
         except ZeroDivisionError:
+            loading_func()
             typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
 
 
@@ -151,10 +181,12 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"{typer.style('Shifr matni',fg=typer.colors.GREEN)}",f"{typer.style('Shifr paroli',fg=typer.colors.GREEN)}",f"{typer.style('Natija',fg=typer.colors.GREEN)}"],
                 [f"{typer.style(hill_txt,fg=typer.colors.BLUE)}",f"{hill_code}",f"{hill_result}"],
             ]
+            loading_func()
             typer.secho("Sizning \"HILL\" usulida matningiz shifrdan chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(hill_table,headers="firstrow",tablefmt="psql"))
 
         except ZeroDivisionError:
+            loading_func()
             typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
 
     elif x == "morse" and mode == "m--encode" and lang == "en":
@@ -165,9 +197,11 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"Asl matn",f"Kodlangan matn"],
                 [f"{typer.style(morse_txt,fg=typer.colors.RED)}",f"{morse_result}"]
             ]
+            loading_func()
             typer.secho(f"Sizning matningiz \"MORSE\"usulida kodlandi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(morse_table,headers="firstrow",tablefmt="psql"))
         except:
+            loading_func()
             typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
     elif x == "morse" and mode == "m--decode" and lang == "en":
         try:
@@ -177,9 +211,11 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"Kodlangan matn",f"Asl matn"],
                 [f"{typer.style(morse_txt,fg=typer.colors.RED)}",f"{morse_result}"]
             ]
+            loading_func()
             typer.secho(f"Sizning matningiz \"MORSE\"usulida koddan chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(morse_table,headers="firstrow",tablefmt="psql"))
         except:
+            loading_func()
             typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
     elif x == "caesar" and mode == "m--encode" and lang == "en":
         try:
@@ -190,6 +226,7 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"{typer.style('Asl matn',fg=typer.colors.GREEN)}",f"{typer.style('Shifr paroli',fg=typer.colors.GREEN)}",f"{typer.style('Natija',fg=typer.colors.GREEN)}"],
                 [f"{typer.style(caesar_txt,fg=typer.colors.BLUE)}"f"{typer.style(caesar_num,fg=typer.colors.RED)}",f"{caesar_res}"],
             ]
+            loading_func()
             typer.secho("Sizning \"Sizar\" usulida matningiz shifrlandi chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(caesar_table,headers="firstrow",tablefmt="psql"))
         except:
@@ -204,9 +241,11 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"{typer.style('Shifr paroli',fg=typer.colors.GREEN)}",f"{typer.style('Natija',fg=typer.colors.GREEN)}"],
                 [f"{typer.style(caesar_num,fg=typer.colors.RED)}",f"{caesar_res}"],
             ]
+            loading_func()
             typer.secho("Sizning \"Sizar\" usulida matningiz shifrdan chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(caesar_table,headers="firstrow",tablefmt="psql"))
         except:
+            loading_func()
             typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
     elif x == "mirage" and  mode == "m--encode" and lang == "en":
         try:
@@ -216,9 +255,11 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"Asl matn",f"Kodlangan matn"]
                 [f"{typer.style(mirage_txt,fg=typer.colors.RED)}",f"{mirage_res}"]
             ]
+            loading_func()
             typer.echo(f"Sizning matningiz \"Mirage\" usulida kodlandi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(mirage_table,headers="firstrow",tablefmt="psql"))
         except:
+            loading_func()
             typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
     elif x == "mirage" and mode == "m--decode" and lang == "en":
         try:
@@ -228,9 +269,11 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"Asl matn",f"Kodlangan matn"]
                 [f"{typer.style(mirage_txt,fg=typer.colors.RED)}",f"{mirage_res}"]
             ]
+            loading_func()
             typer.echo(f"Sizning matningiz \"Mirage\"usulida koddan chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(mirage_table,headers="firstrow",tablefmt="psql"))
         except:
+            loading_func()
             typer.secho("You've made a mistake. Check out the user guide",fg=typer.colors.RED)
 
 
@@ -245,9 +288,11 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"{typer.style('Asl matn',fg=typer.colors.GREEN)}",f"{typer.style('Shifr paroli',fg=typer.colors.GREEN)}",f"{typer.style('Natija',fg=typer.colors.GREEN)}"],
                 [f"{typer.style(hill_txt,fg=typer.colors.BLUE)}",f"{hill_code}",f"{hill_result}"],
             ]
+            loading_func()
             typer.secho("Sizning \"HILL\" usulida matningiz shifrlandi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(hill_table,headers="firstrow",tablefmt="psql"))
         except ZeroDivisionError:
+            loading_func()
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
 
 
@@ -261,10 +306,12 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"{typer.style('Shifr paroli',fg=typer.colors.GREEN)}",f"{typer.style('Natija',fg=typer.colors.GREEN)}"],
                 [f"{hill_code}",f"{hill_result}"],
             ]
+            loading_func()
             typer.secho("Sizning \"HILL\" usulida matningiz shifrdan chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(hill_table,headers="firstrow",tablefmt="psql"))
 
         except ZeroDivisionError:
+            loading_func()
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
 
     elif x == "morse" and mode == "m--encode" and lang == "ru":
@@ -275,9 +322,11 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"Asl matn",f"Kodlangan matn"]
                 [f"{typer.style(morse_txt,fg=typer.colors.RED)}",f"{morse_result}"]
             ]
+            loading_func()
             typer.echo(f"Sizning matningiz \"MORSE\"usulida kodlandi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(morse_table,headers="firstrow",tablefmt="psql"))
         except:
+            loading_func()
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
     elif x == "morse" and mode == "m--decode" and lang == "ru":
         try:
@@ -287,9 +336,12 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"Kodlangan matn",f"Asl matn"]
                 [f"{typer.style(morse_txt,fg=typer.colors.RED)}",f"{morse_result}"]
             ]
+
+            loading_func()
             typer.echo(f"Sizning matningiz \"MORSE\"usulida koddan chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(morse_table,headers="firstrow",tablefmt="psql"))
         except:
+            loading_func()
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
     elif x == "caesar" and mode == "m--encode" and lang == "ru":
         try:
@@ -300,9 +352,11 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"{typer.style('Asl matn',fg=typer.colors.GREEN)}",f"{typer.style('Shifr paroli',fg=typer.colors.GREEN)}",f"{typer.style('Natija',fg=typer.colors.GREEN)}"],
                 [f"{typer.style(caesar_txt,fg=typer.colors.BLUE)}"f"{typer.style(caesar_num,fg=typer.colors.RED)}",f"{caesar_res}"],
             ]
+            loading_func()
             typer.secho("Sizning \"Sizar\" usulida matningiz shifrlandi chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(hill_table,headers="firstrow",tablefmt="psql"))
         except:
+            loading_func()
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
         
     elif x == "caesar" and mode == "m--decode" and lang == "ru":
@@ -314,9 +368,11 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"{typer.style('Shifr matni',fg=typer.colors.GREEN)},"f"{typer.style('Shifr paroli',fg=typer.colors.GREEN)}",f"{typer.style('Natija',fg=typer.colors.GREEN)}"],
                 [f"{typer.style(caesar_txt,fg=typer.colors.BLUE)}",f"{typer.style(caesar_num,fg=typer.colors.RED)}",f"{caesar_res}"],
             ]
+            loading_func()
             typer.secho("Sizning \"Sizar\" usulida matningiz shifrdan chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(hill_table,headers="firstrow",tablefmt="psql"))
         except:
+            loading_func()
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
     elif x == "mirage" and  mode == "m--encode" and lang == "ru":
         try:
@@ -326,9 +382,11 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"Asl matn",f"Kodlangan matn"]
                 [f"{typer.style(mirage_txt,fg=typer.colors.RED)}",f"{mirage_res}"]
             ]
+            loading_func()
             typer.echo(f"Sizning matningiz \"Mirage\" usulida kodlandi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(mirage_table,headers="firstrow",tablefmt="psql"))
         except:
+            loading_func()
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
     elif x == "mirage" and mode == "m--decode" and lang == "ru":
         try:
@@ -338,9 +396,11 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
                 [f"Kodlangan matn",f"Natija"]
                 [f"{typer.style(mirage_txt,fg=typer.colors.RED)}",f"{mirage_res}"]
             ]
+            loading_func()
             typer.echo(f"Sizning matningiz \"Mirage\"usulida koddan chiqarildi",fg=typer.colors.CYAN,bold=True)
             print(tabulate(mirage_table,headers="firstrow",tablefmt="psql"))
         except:
+            loading_func()
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
 
 if __name__ == "__main__":
