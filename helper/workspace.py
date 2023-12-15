@@ -115,9 +115,9 @@ def start_cli():
 
             x = inquirer.prompt(hill_mode)
             if "Шифрование/Кодирование" in x['mode']:
-                hill_encode_uz()
+                hill_encode_ru()
             elif "Расшифровать/декодировать" in x['mode']:
-                hill_decode_uz()
+                hill_decode_ru()
         if "Мираж" in ru['type']:
             Mirage_mode = [
                 inquirer.List(
@@ -130,10 +130,10 @@ def start_cli():
 
             x = inquirer.prompt(Mirage_mode)
             if "Шифрование/Кодирование" in x['mode']:
-                mirage_encode_uz()
+                mirage_encode_ru()
             elif "Расшифровать/декодировать" in x['mode']:
                 mirage_decode_uz()
-        if "Морзе" in uz['type']:
+        if "Морзе" in ru['type']:
             Morse_mode = [
                 inquirer.List(
                     "mode",
@@ -145,7 +145,7 @@ def start_cli():
 
             x = inquirer.prompt(Morse_mode)
             if "Шифрование/Кодирование" in x['mode']:
-                morse_encode_uz()
+                morse_encode_ru()
             elif "Расшифровать/декодировать" in x['mode']:
                 morse_decode_uz()
         if "Сизар" in ru['type']:
@@ -160,9 +160,9 @@ def start_cli():
 
             x = inquirer.prompt(Caeasar_mode)
             if "Шифрование/Кодирование" in x['mode']:
-                caesar_encode_uz()
+                caesar_encode_ru()
             elif "Расшифровать/декодировать" in x['mode']:
-                caesar_decode_uz()
+                caesar_decode_ru()
 ######################## English Section Start ##########################################
     if "English" in language:
         time.sleep(0.4)
