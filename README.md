@@ -26,10 +26,12 @@ cd UzChipher-CLI
 python3 setup.py
 ```
 <h4>The second way:</h4>
+
 ```
 git clone https://github.com/akhatkulov/UzChipher-CLI.git
 cd UzChipher-CLI
 ```
+
 <h4>and install this libraries</h4>
 <b>
 <pre>
