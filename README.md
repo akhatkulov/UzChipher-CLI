@@ -4,11 +4,11 @@
 <p>The reason why I named the program in German is that cryptography started with my interest in German cryptographers.</p> <br>
 <hr>
 <h1>Questions:</h1>
-<h3><a href="https://github.com/akhatkulov/UzChipher-CLI/edit/main/README.md#install">How to install?</a></h3>
-<h3><a href="use">How to use?</a></h3>
-<h3><a href="cipher_types">What types of encryption are there?</a></h3>
-<h3><a href="lang">What languages ​​does the program work in?</a></h3>
-<h3><a href="apps">What else does the program look like?</a></h3>
+<h3><a href="https://github.com/akhatkulov/UzChipher-CLI#install">How to install?</a></h3>
+<h3><a href="https://github.com/akhatkulov/UzChipher-CLI#use">How to use?</a></h3>
+<h3><a href="https://github.com/akhatkulov/UzChipher-CLI#cipher_types">What types of encryption are there?</a></h3>
+<h3><a href="https://github.com/akhatkulov/UzChipher-CLI#lang">What languages ​​does the program work in?</a></h3>
+<h3><a href="https://github.com/akhatkulov/UzChipher-CLI#apps">What else does the program look like?</a></h3>
 
 <hr>
 <h3 id="apps">📥You can also use other views of the program!</h3> <br>
