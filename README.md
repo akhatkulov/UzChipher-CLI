@@ -18,12 +18,25 @@
 <hr>
 <h1>How to install?</h1>
 <h3>There are two ways to install the program.</h3>
-The first way: <br> <br>
+<h4>The first way: </h4> 
 
 ```
 git clone https://github.com/akhatkulov/UzChipher-CLI.git
 cd UzChipher-CLI
 python3 setup.py
 ```
-<br>
-The second way: <br>
+<h4>The second way:</h4>
+```
+git clone https://github.com/akhatkulov/UzChipher-CLI.git
+cd UzChipher-CLI
+```
+<h4>and install this libraries</h4>
+```
+<pre>
+┎  libraries
+╏
+╔  typer
+╠  inquirer
+╚  tabulate
+</pre>
+```
