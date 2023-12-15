@@ -59,7 +59,7 @@ For example: <code>python3 app.py hill m--encode uz</code>
 
 </pre>
 </b>
-<h4>Second way is very simple and easy</h4>
+<h4>Second way is very simple and easy:</h4>
 Run:<code>python3 app.py</code>
 <hr>
 
