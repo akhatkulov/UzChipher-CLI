@@ -19,14 +19,14 @@
 <hr>
 <h1 id="install">✅How to install?</h1>
 <h3>There are two ways to install the program.</h3>
-<h4>The first way: </h4> 
+<h4>➖The first way: </h4> 
 
 ```
 git clone https://github.com/akhatkulov/UzChipher-CLI.git
 cd UzChipher-CLI
 python3 setup.py
 ```
-<h4>The second way:</h4>
+<h4>➖The second way:</h4>
 
 ```
 git clone https://github.com/akhatkulov/UzChipher-CLI.git
