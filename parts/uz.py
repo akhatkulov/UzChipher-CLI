@@ -82,7 +82,7 @@ def caesar_encode_uz():
             caesar_res = typer.style(caesar_encipher(caesar_txt,caesar_num),fg=typer.colors.BLUE)
             caesar_table = [
                 [f"{typer.style('Asl matn',fg=typer.colors.GREEN)}",f"{typer.style('Shifr paroli',fg=typer.colors.GREEN)}",f"{typer.style('Natija',fg=typer.colors.GREEN)}"],
-                [f"{typer.style(caesar_txt,fg=typer.colors.BLUE)}"f"{typer.style(caesar_num,fg=typer.colors.RED)}",f"{caesar_res}"],
+                [f"{typer.style(caesar_txt,fg=typer.colors.BLUE)}",f"{typer.style(caesar_num,fg=typer.colors.RED)}",f"{caesar_res}"],
             ]
             loading_func()
             typer.secho("Sizning \"Sizar\" usulida matningiz shifrlandi chiqarildi",fg=typer.colors.CYAN,bold=True)
