@@ -33,7 +33,7 @@ git clone https://github.com/akhatkulov/UzChipher-CLI.git
 cd UzChipher-CLI
 ```
 
-<h4>and install this libraries</h4>
+<h4>➖and install this libraries</h4>
 <b>
   
 ```
@@ -48,7 +48,7 @@ cd UzChipher-CLI
 <hr>
 <h1 id="use"> How to use? </h1>
 <h3>There are two ways to use it</h3>
-<h4>First way is one line</h4>
+<h4>➖First way is one line</h4>
 For example: <code>python3 app.py hill m--encode uz</code>
 <h5 id="lang">First we call the program through "python3 app.py" and specify the required encryption method i.e. "hill". Then we tell it the mode, for example "m--encode". At the end, the program should communicate with us in any language, for example, "en", that is, English</h5>
 <b id="cipher_types">
@@ -63,7 +63,7 @@ For example: <code>python3 app.py hill m--encode uz</code>
 ```
 
 </b>
-<h4>Second way is very simple and easy</h4>
+<h4>➖Second way is very simple and easy</h4>
 Run:<code>python3 app.py</code>
 <hr>
 
