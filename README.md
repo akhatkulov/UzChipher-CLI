@@ -1,7 +1,7 @@
 <b style="text-align: center;"> <h1> ⚡⚡UzChipher - CLI </h1> </b>
 <hr>
 <i>🔑Why is the program called UzChipher? </i> <br>
-<p>The reason why i named this program UzChiper is that my interests in cryptography started with my interest in German cryptographers.</p> <br>
+<p>The reason why i named this program UzChipher is that my interests in cryptography started with my interest in German cryptographers.</p> <br>
 <hr>
 <h1>💡Questions:</h1>
 <h3><a href="https://github.com/akhatkulov/UzChipher-CLI#install">How to install?</a></h3>
