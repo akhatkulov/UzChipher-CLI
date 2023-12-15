@@ -81,7 +81,7 @@ def caesar_encode_ru():
             caesar_res = typer.style(caesar_encipher(caesar_txt,caesar_num),fg=typer.colors.BLUE)
             caesar_table = [
                 [f"{typer.style('Оригинальный текст',fg=typer.colors.GREEN)}",f"{typer.style('Пароль',fg=typer.colors.GREEN)}",f"{typer.style('Результат',fg=typer.colors.GREEN)}"],
-                [f"{typer.style(caesar_txt,fg=typer.colors.BLUE)}"f"{typer.style(caesar_num,fg=typer.colors.RED)}",f"{caesar_res}"],
+                [f"{typer.style(caesar_txt,fg=typer.colors.BLUE)},"f"{typer.style(caesar_num,fg=typer.colors.RED)}",f"{caesar_res}"],
             ]
             loading_func()
             typer.secho("Ваш текст расшифрован методом «Сизар».",fg=typer.colors.CYAN,bold=True)
