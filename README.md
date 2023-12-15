@@ -35,6 +35,7 @@ cd UzChipher-CLI
 
 <h4>and install this libraries</h4>
 <b>
+  
 ```
 ┎  Libraries
 ╏
@@ -42,6 +43,7 @@ cd UzChipher-CLI
 ╠  inquirer
 ╚  tabulate
 ```
+
 </b>
 <hr>
 <h1 id="use"> How to use? </h1>
@@ -50,6 +52,7 @@ cd UzChipher-CLI
 For example: <code>python3 app.py hill m--encode uz</code>
 <h5 id="lang">First we call the program through "python3 app.py" and specify the required encryption method i.e. "hill". Then we tell it the mode, for example "m--encode". At the end, the program should communicate with us in any language, for example, "en", that is, English</h5>
 <b id="cipher_types">
+  
 ```
 ┎  Cipher Types                       ┎Code types            ┎Sytem languages
 ╏                                     ╏                      ╏
@@ -58,6 +61,7 @@ For example: <code>python3 app.py hill m--encode uz</code>
                                                              ╚  en (English)
 
 ```
+
 </b>
 <h4>Second way is very simple and easy</h4>
 Run:<code>python3 app.py</code>
