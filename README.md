@@ -46,7 +46,7 @@ cd UzChipher-CLI
 
 </b>
 <hr>
-<h1 id="use"> How to use? </h1>
+<h1 id="use"> 📋How to use? </h1>
 <h3>There are two ways to use it</h3>
 <h4>➖First way is one line</h4>
 For example: <code>python3 app.py hill m--encode uz</code>
