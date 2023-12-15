@@ -18,7 +18,7 @@
 <hr>
 <h1>How to install?</h1>
 <h3>There are two ways to install the program.</h3>
-The first way: <br>
+The first way: <br> <br>
 
 ```
 git clone https://github.com/akhatkulov/UzChipher-CLI.git
