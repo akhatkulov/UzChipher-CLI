@@ -35,7 +35,7 @@ cd UzChipher-CLI
 <h4>and install this libraries</h4>
 <b>
 <pre>
-┎  libraries
+┎  Libraries
 ╏
 ╔  typer
 ╠  inquirer
@@ -55,11 +55,16 @@ For example: <code>python3 app.py hill m--encode uz</code>
 ╔  Caesar                             ╔ Morze
 ╚  HILL                               ╚ Mirage
 
+
+
 ┎Sytem languages
 ╏
-╔ uz (Uzbek)
+╔  uz (Uzbek)
 ╠  ru (Russian)
 ╚  en (English)
 </pre>
 </b>
+<h4>Second way is very simple and easy</h4>
+Run:<code>python3 app.py</code>
+<hr>
 <br> <br>
