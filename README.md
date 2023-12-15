@@ -31,7 +31,7 @@ git clone https://github.com/akhatkulov/UzChipher-CLI.git
 cd UzChipher-CLI
 ```
 <h4>and install this libraries</h4>
-```
+<b>
 <pre>
 ┎  libraries
 ╏
@@ -39,4 +39,4 @@ cd UzChipher-CLI
 ╠  inquirer
 ╚  tabulate
 </pre>
-```
+</b>
