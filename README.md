@@ -21,6 +21,9 @@
 The first way: <br>
 
 ```
-<copy>git clone https://github.com/akhatkulov/UzChipher-CLI.git</copy>
+git clone https://github.com/akhatkulov/UzChipher-CLI.git
+cd UzChipher-CLI
+python3 setup.py
 ```
-
+<br>
+The second way: <br>
