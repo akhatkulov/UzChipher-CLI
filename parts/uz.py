@@ -6,6 +6,8 @@ import time
 from tabulate import tabulate
 
 
+
+guider = f'Terminalga {typer.style("python3 app.py guide",fg=typer.colors.GREEN)} yozing'
 def loading_func():
     with typer.progressbar(range(10))as sp:
         for i in sp:
@@ -29,6 +31,7 @@ def hill_encode_uz():
     except ZeroDivisionError:
         loading_func()
         typer.secho("Siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
+        typer.echo(guider)
 def hill_decode_uz():
         try:
             hill_txt = typer.prompt("Shifrdan chiqarmoqchi bo'lgan matningizni yuboring")
@@ -46,6 +49,7 @@ def hill_decode_uz():
         except ZeroDivisionError:
             loading_func()
             typer.secho("Siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
+            typer.echo(guider)
 def morse_encode_uz():
         try:
             morse_txt = typer.prompt("Kodlash uchun matningizni yuboring ")
@@ -60,6 +64,7 @@ def morse_encode_uz():
         except:
             loading_func()
             typer.secho("Siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
+            typer.echo(guider)
 def morse_decode_uz():
         try:
             
@@ -75,6 +80,7 @@ def morse_decode_uz():
         except:
             loading_func()
             typer.secho("Siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
+            typer.echo(guider)
 def caesar_encode_uz():
         try:
             caesar_txt = typer.prompt("Shifrlamoqchi bo'lgan matningizni bering")
@@ -89,7 +95,9 @@ def caesar_encode_uz():
             print(tabulate(caesar_table,headers="firstrow",tablefmt="psql"))
         except:
             loading_func()
-            typer.secho("Siz xatoga yo'l qo'ydingiz foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
+
+            typer.secho("Siz xatoga yo'l qo'ydingiz foydalanish qo'llanmasini qayta qarang ",fg=typer.colors.RED)
+            typer.echo(guider)
 def caesar_decode_uz():
         try:
             caesar_txt = typer.prompt("Shifrdan chiqarmoqchi bo'lgan matningizni yuboring")
@@ -105,6 +113,7 @@ def caesar_decode_uz():
         except:
             loading_func()
             typer.secho("Siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
+            typer.echo(guider)
 def mirage_encode_uz():
         try:
             mirage_txt = typer.prompt("Shifrlamoqchi bo'lgan matningizni yuboring")
@@ -119,6 +128,7 @@ def mirage_encode_uz():
         except:
             loading_func()
             typer.secho("Siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
+            typer.echo(guider)
 def mirage_decode_uz():
         try:
             mirage_txt = typer.prompt("Shifrdan chiqarmoqchi bo'lgan matningizni yuboring")
@@ -133,3 +143,4 @@ def mirage_decode_uz():
         except:
             loading_func()
             typer.secho("siz xatoga yo'l qo'ydingin foydalanish qo'llanmasini qayta qarang",fg=typer.colors.RED)
+            typer.echo(guider)

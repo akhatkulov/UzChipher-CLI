@@ -5,7 +5,7 @@ from helper import *
 import time
 from tabulate import tabulate
 
-
+guider = f'Type {typer.style("python3 app.py guide",fg=typer.colors.GREEN)} in terminal'
 def loading_func():
     with typer.progressbar(range(10))as sp:
         for i in sp:
@@ -29,6 +29,7 @@ def hill_encode_en():
         except ZeroDivisionError:
             loading_func()
             typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
+            typer.echo(guider)
 def hill_decode_en():
         try:
             hill_txt = typer.prompt("Send to text you want to decrypt")
@@ -46,6 +47,7 @@ def hill_decode_en():
         except ZeroDivisionError:
             loading_func()
             typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
+            typer.echo(guider)
 def morse_encode_en():
         try:
             morse_txt = typer.prompt("Give me text to encode ")
@@ -60,6 +62,7 @@ def morse_encode_en():
         except:
             loading_func()
             typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
+            typer.echo(guider)
 def morse_decode_en():
         try:
             morse_txt = typer.prompt("Giv me text to decode")
@@ -74,6 +77,7 @@ def morse_decode_en():
         except:
             loading_func()
             typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
+            typer.echo(guider)
 def caesar_encode_en():
         try:
             caesar_txt = typer.prompt("Send the text you want to encrypt")
@@ -88,6 +92,7 @@ def caesar_encode_en():
             print(tabulate(caesar_table,headers="firstrow",tablefmt="psql"))
         except:
             typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
+            typer.echo(guider)
 def caesar_decode_en():
         try:
             caesar_txt = typer.prompt("Send the text you want to decrypt")
@@ -103,6 +108,7 @@ def caesar_decode_en():
         except:
             loading_func()
             typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
+            typer.echo(guider)
 def mirage_encode_en():
         try:
             mirage_txt = typer.prompt("Give me text to encode")
@@ -117,6 +123,7 @@ def mirage_encode_en():
         except:
             loading_func()
             typer.secho("You've made a mistake. Check out the user guide.",fg=typer.colors.RED)
+            typer.echo(guider)
 def mirage_decode_en():
         try:
             mirage_txt = typer.prompt("Give me text to decode")
@@ -131,3 +138,4 @@ def mirage_decode_en():
         except:
             loading_func()
             typer.secho("You've made a mistake. Check out the user guide",fg=typer.colors.RED)
+            typer.echo(guider)

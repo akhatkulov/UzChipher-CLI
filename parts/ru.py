@@ -5,6 +5,8 @@ from helper import *
 import time
 from tabulate import tabulate
 
+guider = f'Введите {typer.style("python3 app.py guide",fg=typer.colors.GREEN)} в терминале'
+
 def loading_func():
     with typer.progressbar(range(10))as sp:
         for i in sp:
@@ -28,6 +30,7 @@ def hill_encode_ru():
         except ZeroDivisionError:
             loading_func()
             typer.secho("Вы допустили ошибку, пожалуйста, обратитесь к руководству пользователя еще раз.",fg=typer.colors.RED)
+            typer.echo(guider)
 def hill_decode_ru():
         try:
             hill_txt = typer.prompt("Отправьте текст, который хотите расшифровать")
@@ -45,6 +48,7 @@ def hill_decode_ru():
         except ZeroDivisionError:
             loading_func()
             typer.secho("Вы допустили ошибку, пожалуйста, обратитесь к руководству пользователя еще раз.g",fg=typer.colors.RED)
+            typer.echo(guider)
 def morse_encode_ru():
         try:
             morse_txt = typer.prompt("Отправьте текст на кодировку")
@@ -59,6 +63,7 @@ def morse_encode_ru():
         except:
             loading_func()
             typer.secho("Вы допустили ошибку, пожалуйста, обратитесь к руководству пользователя еще раз.",fg=typer.colors.RED)
+            typer.echo(guider)
 def morse_decode_ru():
         try:
             morse_txt = typer.prompt("Отправьте текст, который хотите расшифровать")
@@ -74,6 +79,7 @@ def morse_decode_ru():
         except:
             loading_func()
             typer.secho("Вы допустили ошибку, пожалуйста, обратитесь к руководству пользователя еще раз.",fg=typer.colors.RED)
+            typer.echo(guider)
 def caesar_encode_ru():
         try:
             caesar_txt = typer.prompt("Введите текст, который хотите зашифровать")
@@ -89,6 +95,7 @@ def caesar_encode_ru():
         except:
             loading_func()
             typer.secho("Вы допустили ошибку, пожалуйста, обратитесь к руководству пользователя еще раз.",fg=typer.colors.RED)
+            typer.echo(guider)
 def caesar_decode_ru():
         try:
             caesar_txt = typer.prompt("Отправьте текст, который хотите расшифровать")
@@ -104,6 +111,7 @@ def caesar_decode_ru():
         except:
             loading_func()
             typer.secho("Вы допустили ошибку, пожалуйста, обратитесь к руководству пользователя еще раз.",fg=typer.colors.RED)
+            typer.echo(guider)
 def mirage_encode_ru():
         try:
             mirage_txt = typer.prompt("Отправьте текст, который вы хотите зашифровать")
@@ -118,6 +126,7 @@ def mirage_encode_ru():
         except:
             loading_func()
             typer.secho("Вы допустили ошибку, пожалуйста, обратитесь к руководству пользователя еще раз.",fg=typer.colors.RED)
+            typer.echo(guider)
 def mirage_decode_ru():
         try:
             mirage_txt = typer.prompt("Отправьте текст, который хотите расшифровать")
@@ -132,3 +141,4 @@ def mirage_decode_ru():
         except:
             loading_func()
             typer.secho("Вы допустили ошибку, пожалуйста, обратитесь к руководству пользователя еще раз.",fg=typer.colors.RED)
+            typer.echo(guider)

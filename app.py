@@ -89,23 +89,24 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
         )
     ]
 
-    x = inquirer.prompt(l)
+        x = inquirer.prompt(l)
 
-    if "Uzbek" in x["lang"]:
-        types = [
-            inquirer.List(
+        if "Uzbek" in x["lang"]:
+            types = [
+                inquirer.List(
                 'type',
                 message= f"{typer.style('Shifrlash va kodlash usullaridan birini tanlang',fg=typer.colors.RED)}",
                 choices=[f'{typer.style("HILL",fg=typer.colors.GREEN)}',f'{typer.style("Morze",fg=typer.colors.GREEN)}',f'{typer.style("Mirage",fg=typer.colors.GREEN)}',f'{typer.style("Sezar",fg=typer.colors.GREEN)}']
             )
 
         ]
-        check = inquirer.prompt(types)
-        os.system('clear')
-        if "HILL" in check['type']:
-            typer.secho("HILL shifri qanday ishlaydi?",fg=typer.colors.CYAN)
-            typer.echo("\n")
-            typer.secho(f"""Hill shifrlash chiziqli algebraga asoslangan poligrafik almashtirish shifridir. \nU ochiq matnni shifrlangan matnga aylantirish uchun matritsalarni ko'paytirish orqali ishlaydi va aksincha. \nBu erda Hill shifrining qanday ishlashi haqida qisqacha ma'lumot:
+            check = inquirer.prompt(types)
+            os.system('clear')
+
+            if "HILL" in check['type']:
+                typer.secho("HILL shifri qanday ishlaydi?",fg=typer.colors.CYAN)
+                typer.echo("\n")
+                typer.secho(f"""Hill shifrlash chiziqli algebraga asoslangan poligrafik almashtirish shifridir. \nU ochiq matnni shifrlangan matnga aylantirish uchun matritsalarni ko'paytirish orqali ishlaydi va aksincha. \nBu erda Hill shifrining qanday ishlashi haqida qisqacha ma'lumot:
 
 
 {typer.style("Kalit avlodi:",fg=typer.colors.RED)}
@@ -124,11 +125,11 @@ Kiritish: Mexroj \n
 Parol: m2008
 Narija: emxay
 """)
-        if "Sezar" in check['type']:
-            typer.secho("Sezar shifri qanday ishlaydi?",fg=typer.colors.CYAN)
-            typer.secho("Hozirgi Sezar shifri faqatgina lotin harflariga ishlaydi",fg=typer.colors.RED)
-            typer.echo("\n")
-            typer.secho(f"""Sezar shifrlash, shuningdek, siljish shifrlash sifatida ham tanilgan, oddiy almashtirish shifridir, unda ochiq matndagi har bir harf alifbo bo'ylab ma'lum miqdordagi joylarni pastga yoki yuqoriga siljitadi. Taqdim etilgan qidiruv natijasiga asoslanib, Sezar shifrlash jarayoni qanday ishlashi haqida qisqacha ma'lumot:
+            if "Sezar" in check['type']:
+                typer.secho("Sezar shifri qanday ishlaydi?",fg=typer.colors.CYAN)
+                typer.secho("Hozirgi Sezar shifri faqatgina lotin harflariga ishlaydi",fg=typer.colors.RED)
+                typer.echo("\n")
+                typer.secho(f"""Sezar shifrlash, shuningdek, siljish shifrlash sifatida ham tanilgan, oddiy almashtirish shifridir, unda ochiq matndagi har bir harf alifbo bo'ylab ma'lum miqdordagi joylarni pastga yoki yuqoriga siljitadi. Taqdim etilgan qidiruv natijasiga asoslanib, Sezar shifrlash jarayoni qanday ishlashi haqida qisqacha ma'lumot:
 
 
 {typer.style("Kalit tanlash:",fg=typer.colors.RED)}
@@ -148,32 +149,32 @@ Agar kalit 'H' va ochiq matn 'HELLO', shifrlash jarayoni 'KHOOR'ga olib keladi.
 Xabarning shifrini ochish uchun shifrlangan matndagi har bir harfni teskari yo'nalishda siljitish orqali jarayon shunchaki teskari tomonga o'zgartiriladi.
 
 """)
-        if "Morze" in check['type']:
-            typer.secho("Morze kodlash tizimi qanday ishlaydi?",fg=typer.colors.CYAN)
-            typer.echo("\n")
-            typer.secho("""Morze, telegraf kaliti yordamida nuqta va tirelar orqali xabarlar o'girish uchun qurol kodlash tizimi.\n\nBu tizimda har bir harf va raqamga mos keladigan nuqta va tirelar orqali xabarlarni ifodalash uchun qoladi.\n\nMorze kodlash tizimi, telegraf orqali xabarlar o'girishda, har bir harf va raqamga mos nuqta va tirelar orqali xabarlarni ifodalash uchun olinadi.\n\nMisol uchun, "A" harfi uchun nuqta-tire (.-), "B" harfi uchun tire-nuqta-nuqta-nuqta (−...), "C" harfi uchun tire-nuqta-tire-nuqta (−.-.) kabi.\nBu tizimda har bir harf va raqamga mos keladigan nuqta va tirelar orqali xabarlarni ifodalash uchun qoladi.\n\nMorze kodlash tizimi, telegraf orqali xabarlar o'girishda, har bir harf va raqamga mos nuqta va tirelar orqali xabarlarni ifodalash uchun olinadi.\n\nMisol uchun, "A" harfi uchun nuqta-tire (.-), "B" harfi uchun tire-nuqta-nuqta-nuqta (−...), "C" harfi uchun tire-nuqta-tire-nuqta (−.-.) kabi.\nBu tizimda har bir harf va raqamga mos keladigan nuqta va tirelar orqali xabarlarni ifodalash uchun qoladi. """)
-            typer.echo("\n")
-        if "Mirage" in check['type']:
-            typer.secho("Mirage kodlash tizimi qanday ishlaydi?",fg=typer.colors.CYAN)
-            typer.echo("\n")
-            typer.secho("""Mirage kodlash tizimi sizning matningizdagi raqam va harflar o'rniga o'zining lug'atdigai belgilarni joylashtirib tushunarsiz ko'rinishga keltiradi""")
-            typer.echo("\n")
+            if "Morze" in check['type']:
+                typer.secho("Morze kodlash tizimi qanday ishlaydi?",fg=typer.colors.CYAN)
+                typer.echo("\n")
+                typer.secho("""Morze, telegraf kaliti yordamida nuqta va tirelar orqali xabarlar o'girish uchun qurol kodlash tizimi.\n\nBu tizimda har bir harf va raqamga mos keladigan nuqta va tirelar orqali xabarlarni ifodalash uchun qoladi.\n\nMorze kodlash tizimi, telegraf orqali xabarlar o'girishda, har bir harf va raqamga mos nuqta va tirelar orqali xabarlarni ifodalash uchun olinadi.\n\nMisol uchun, "A" harfi uchun nuqta-tire (.-), "B" harfi uchun tire-nuqta-nuqta-nuqta (−...), "C" harfi uchun tire-nuqta-tire-nuqta (−.-.) kabi.\nBu tizimda har bir harf va raqamga mos keladigan nuqta va tirelar orqali xabarlarni ifodalash uchun qoladi.\n\nMorze kodlash tizimi, telegraf orqali xabarlar o'girishda, har bir harf va raqamga mos nuqta va tirelar orqali xabarlarni ifodalash uchun olinadi.\n\nMisol uchun, "A" harfi uchun nuqta-tire (.-), "B" harfi uchun tire-nuqta-nuqta-nuqta (−...), "C" harfi uchun tire-nuqta-tire-nuqta (−.-.) kabi.\nBu tizimda har bir harf va raqamga mos keladigan nuqta va tirelar orqali xabarlarni ifodalash uchun qoladi. """)
+                typer.echo("\n")
+            if "Mirage" in check['type']:
+                typer.secho("Mirage kodlash tizimi qanday ishlaydi?",fg=typer.colors.CYAN)
+                typer.echo("\n")
+                typer.secho("""Mirage kodlash tizimi sizning matningizdagi raqam va harflar o'rniga o'zining lug'atdigai belgilarni joylashtirib tushunarsiz ko'rinishga keltiradi""")
+                typer.echo("\n")
 ######################################## Russian Section Start ################################################
-    if "Russian" in x["lang"]:
-        types = [
-            inquirer.List(
+        if "Russian" in x["lang"]:
+            types = [
+                inquirer.List(
                 'type',
                 message= f"{typer.style('Выберите один из методов шифрования и кодирования',fg=typer.colors.RED)}",
                 choices=[f'{typer.style("ХОЛМ",fg=typer.colors.GREEN)}',f'{typer.style("Морзе",fg=typer.colors.GREEN)}',f'{typer.style("Мираж",fg=typer.colors.GREEN)}',f'{typer.style("Цезарь",fg=typer.colors.GREEN)}']
             )
 
         ]
-        check = inquirer.prompt(types)
-        os.system('clear')
-        if "ХОЛМ" in check['type']:
-            typer.secho("Как работает шифр ХОЛМ?",fg=typer.colors.CYAN)
-            typer.echo("\n")
-            typer.secho(f"""Шифр Хилла — это полиграфический перестановочный шифр, основанный на линейной алгебре. \nОн работает путем умножения матриц для преобразования открытого текста в зашифрованный текст и наоборот. \nВот краткое описание того, как работает шифр Хилла:
+            check = inquirer.prompt(types)
+            os.system('clear')
+            if "ХОЛМ" in check['type']:
+                typer.secho("Как работает шифр ХОЛМ?",fg=typer.colors.CYAN)
+                typer.echo("\n")
+                typer.secho(f"""Шифр Хилла — это полиграфический перестановочный шифр, основанный на линейной алгебре. \nОн работает путем умножения матриц для преобразования открытого текста в зашифрованный текст и наоборот. \nВот краткое описание того, как работает шифр Хилла:
 
 
 {typer.style("Генерация ключей:",fg=typer.colors.RED)}
@@ -192,11 +193,11 @@ Xabarning shifrini ochish uchun shifrlangan matndagi har bir harfni teskari yo'n
 Пароль: m2008
 Нария: emxay
 """)
-        if "Цезарь" in check['type']:
-            typer.secho("Как работает шифр Цезаря?",fg=typer.colors.CYAN)
-            typer.secho("Текущий шифр Цезаря работает только с латинскими буквами.",fg=typer.colors.RED)
-            typer.echo("\n")
-            typer.secho(f"""Шифр Цезаря, также известный как шифр сдвига, представляет собой простой шифр перестановки, в котором каждая буква открытого текста сдвигается вниз или вверх на определенное количество мест в алфавите. На основе предоставленных результатов поиска приведено краткое описание того, как работает процесс шифрования Caesar:
+            if "Цезарь" in check['type']:
+                typer.secho("Как работает шифр Цезаря?",fg=typer.colors.CYAN)
+                typer.secho("Текущий шифр Цезаря работает только с латинскими буквами.",fg=typer.colors.RED)
+                typer.echo("\n")
+                typer.secho(f"""Шифр Цезаря, также известный как шифр сдвига, представляет собой простой шифр перестановки, в котором каждая буква открытого текста сдвигается вниз или вверх на определенное количество мест в алфавите. На основе предоставленных результатов поиска приведено краткое описание того, как работает процесс шифрования Caesar:
 {typer.style("Выберите клавишу:",fg=typer.colors.RED)}
 
 Выберите значение смещения, то есть количество позиций, на которые нужно переместить каждую букву открытого текста.
@@ -213,32 +214,32 @@ Xabarning shifrini ochish uchun shifrlangan matndagi har bir harfni teskari yo'n
 
 Процесс просто меняется на обратный путем перемещения каждой буквы зашифрованного текста в противоположном направлении для расшифровки сообщения.
 """)
-        if "Морзе" in check['type']:
-            typer.secho("Как работает система азбуки Морзе?",fg=typer.colors.CYAN)
-            typer.echo("\n")
-            typer.secho("""Морзе, система кода оружия для передачи сообщений через точки и тире с использованием телеграфного ключа.\n\nВ этой системе остается выражать сообщения с помощью точек и тире, соответствующих каждой букве и цифре.\n\nСистема кода Морзе, телеграфные сообщения o 'во входных данных каждая буква и цифра используются для представления сообщений через точки и тире.\n\nНапример, точка-тире (.-) для "A", тире-точка-точка-точка-точка ( −.. .), например тире-точка-тире-точка (-.-.) для буквы "C".\nЭта система по-прежнему позволяет выражать сообщения с помощью точек и тире, соответствующих каждой букве и цифре.\n\nСистема азбуки Морзе, при отправке сообщений по телеграфу каждая буква и цифра принимаются для выражения сообщения через точки и тире.\n\nНапример, точка-тире (.-) для буквы "А", тире- для буквы "Б" типа точки -точка-точка (-...), тире-точка-тире-точка (-.-.) для буквы "С".\nСистеме остается выражать сообщения с помощью точек и тире, соответствующих каждой букве и цифре. . """)
-            typer.echo("\n")
-        if "Мираж" in check['type']:
-            typer.secho("Как работает система кодирования Мираж?",fg=typer.colors.CYAN)
-            typer.echo("\n")
-            typer.secho("""Система кодирования Мираж делает ваш текст неясным, заменяя символы из словаря вместо цифр и букв""")
-            typer.echo("\n")
+            if "Морзе" in check['type']:
+                typer.secho("Как работает система азбуки Морзе?",fg=typer.colors.CYAN)
+                typer.echo("\n")
+                typer.secho("""Морзе, система кода оружия для передачи сообщений через точки и тире с использованием телеграфного ключа.\n\nВ этой системе остается выражать сообщения с помощью точек и тире, соответствующих каждой букве и цифре.\n\nСистема кода Морзе, телеграфные сообщения o 'во входных данных каждая буква и цифра используются для представления сообщений через точки и тире.\n\nНапример, точка-тире (.-) для "A", тире-точка-точка-точка-точка ( −.. .), например тире-точка-тире-точка (-.-.) для буквы "C".\nЭта система по-прежнему позволяет выражать сообщения с помощью точек и тире, соответствующих каждой букве и цифре.\n\nСистема азбуки Морзе, при отправке сообщений по телеграфу каждая буква и цифра принимаются для выражения сообщения через точки и тире.\n\nНапример, точка-тире (.-) для буквы "А", тире- для буквы "Б" типа точки -точка-точка (-...), тире-точка-тире-точка (-.-.) для буквы "С".\nСистеме остается выражать сообщения с помощью точек и тире, соответствующих каждой букве и цифре. . """)
+                typer.echo("\n")
+            if "Мираж" in check['type']:
+                typer.secho("Как работает система кодирования Мираж?",fg=typer.colors.CYAN)
+                typer.echo("\n")
+                typer.secho("""Система кодирования Мираж делает ваш текст неясным, заменяя символы из словаря вместо цифр и букв""")
+                typer.echo("\n")
 ################################### English section start #####################
-    if "English" in x["lang"]:
-        types = [
-            inquirer.List(
+        if "English" in x["lang"]:
+            types = [
+                inquirer.List(
                 'type',
                 message= f"{typer.style('Choose one of encryption and encoding methods',fg=typer.colors.RED)}",
                 choices=[f'{typer.style("HILL",fg=typer.colors.GREEN)}',f'{typer.style("Morse",fg=typer.colors.GREEN)}',f'{ typer.style("Mirage",fg=typer.colors.GREEN)}',f'{typer.style("Caesar",fg=typer.colors.GREEN)}']
             )
 
         ]
-        check = inquirer.prompt(types)
-        os.system('clear')
-        if "HILL" in check['type']:
-            typer.secho("How does the HILL cipher work?",fg=typer.colors.CYAN)
-            typer.echo("\n")
-            typer.secho(f"""Hill cipher is a polygraphic permutation cipher based on linear algebra. \nIt works by multiplying matrices to convert plaintext to ciphertext and vice versa. \nHere's a brief explanation of how Hill's cipher works:
+            check = inquirer.prompt(types)
+            os.system('clear')
+            if "HILL" in check['type']:
+                typer.secho("How does the HILL cipher work?",fg=typer.colors.CYAN)
+                typer.echo("\n")
+                typer.secho(f"""Hill cipher is a polygraphic permutation cipher based on linear algebra. \nIt works by multiplying matrices to convert plaintext to ciphertext and vice versa. \nHere's a brief explanation of how Hill's cipher works:
 
 
 {typer.style("Key Generation:",fg=typer.colors.RED)}
@@ -257,11 +258,11 @@ Input: Mexroj \n
 Password: m2008
 result: emxay
 """)
-    if "Caesar" in check['type']:
-            typer.secho("How does the Caesar cipher work?",fg=typer.colors.CYAN)
-            typer.secho("The current Caesar cipher only works with Latin letters",fg=typer.colors.RED)
-            typer.echo("\n")
-            typer.secho(f"""Caesar cipher, also known as shift cipher, is a simple permutation cipher in which each letter in the plaintext is shifted a certain number of places down or up through the alphabet. Based on the search result provided, Caesar Here's a quick rundown of how the encryption process works:
+            if "Caesar" in check['type']:
+                typer.secho("How does the Caesar cipher work?",fg=typer.colors.CYAN)
+                typer.secho("The current Caesar cipher only works with Latin letters",fg=typer.colors.RED)
+                typer.echo("\n")
+                typer.secho(f"""Caesar cipher, also known as shift cipher, is a simple permutation cipher in which each letter in the plaintext is shifted a certain number of places down or up through the alphabet. Based on the search result provided, Caesar Here's a quick rundown of how the encryption process works:
 
 
 {typer.style("Select key:",fg=typer.colors.RED)}
@@ -281,15 +282,16 @@ If the key is 'H' and the plaintext is 'HELLO', the encryption process results i
 The process is simply reversed by moving each letter in the ciphertext in the opposite direction to decrypt the message.
 
 """)
-    if "Morse" in check['type']:
-        typer.secho("How does Morse code work?",fg=typer.colors.CYAN)
-        typer.echo("\n")
-        typer.secho("""Morse is a weapon code system for converting messages through dots and dashes using a telegraph key.\n\nThis system remains to represent messages using dots and dashes corresponding to each letter and number.\n\nMorze the coding system used to represent messages in telegraphic messages using dots and dashes corresponding to each letter and number. For example, a dot-dash (.-) for the letter "A", a dash for the letter "B". -dot-dot-dot (−...), such as dash-dot-dash-dot (−.-.) for the letter "C".\nThis system uses dots and dashes to represent messages corresponding to each letter and number. remains.\n\nThe Morse code system is used to represent messages by means of dots and dashes corresponding to each letter and number when transmitting messages by telegraph.\n\nFor example, a dot-dash (.-) for the letter "A", Like dash-dot-dot-dot (−...) for "B", dash-dot-dash-dot (−.-.) for "C".\nA dot corresponds to each letter and number in this system. and it remains to express messages through dashes. """)
-        typer.echo("\n")
-    if "Mirage" in check['type']:
-        typer.secho("How does the Mirage coding system work?",fg=typer.colors.CYAN)
-        typer.echo("\n")
-        typer.secho("""Mirage's encoding system makes your text look obscure by substituting characters from its dictionary instead of numbers and letters""")
-        typer.echo("\n")
+            if "Morse" in check['type']:
+                typer.secho("How does Morse code work?",fg=typer.colors.CYAN)
+                typer.echo("\n")
+                typer.secho("""Morse is a weapon code system for converting messages through dots and dashes using a telegraph key.\n\nThis system remains to represent messages using dots and dashes corresponding to each letter and number.\n\nMorze the coding system used to represent messages in telegraphic messages using dots and dashes corresponding to each letter and number. For example, a dot-dash (.-) for the letter "A", a dash for the letter "B". -dot-dot-dot (−...), such as dash-dot-dash-dot (−.-.) for the letter "C".\nThis system uses dots and dashes to represent messages corresponding to each letter and number. remains.\n\nThe Morse code system is used to represent messages by means of dots and dashes corresponding to each letter and number when transmitting messages by telegraph.\n\nFor example, a dot-dash (.-) for the letter "A", Like dash-dot-dot-dot (−...) for "B", dash-dot-dash-dot (−.-.) for "C".\nA dot corresponds to each letter and number in this system. and it remains to express messages through dashes. """)
+                typer.echo("\n")
+            if "Mirage" in check['type']:
+                typer.secho("How does the Mirage coding system work?",fg=typer.colors.CYAN)
+                typer.echo("\n")
+                typer.secho("""Mirage's encoding system makes your text look obscure by substituting characters from its dictionary instead of numbers and letters""")
+                typer.echo("\n")
+
 if __name__ == "__main__":
     typer.run(main)
