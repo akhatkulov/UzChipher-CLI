@@ -27,7 +27,7 @@ def start_cli():
         inquirer.List(
             "type",
             message=f"{typer.style('Shifrlash va kodlash usullaridan birini tanlang',fg=typer.colors.RED)}",
-        choices=[f"{typer.style('HILL',fg=typer.colors.GREEN)}", f"{typer.style('Sizar',fg=typer.colors.GREEN)}", f"{typer.style('Mirage',fg=typer.colors.GREEN)}",f"{typer.style('Morse',fg=typer.colors.GREEN)}"],
+        choices=[f"{typer.style('HILL',fg=typer.colors.GREEN)}", f"{typer.style('Sezar',fg=typer.colors.GREEN)}", f"{typer.style('Mirage',fg=typer.colors.GREEN)}",f"{typer.style('Morze',fg=typer.colors.GREEN)}"],
         ),
     ]
         uz = inquirer.prompt(cipher_type_uz)
@@ -61,7 +61,7 @@ def start_cli():
                 mirage_encode_uz()
             elif "Shifrdan chiqarish/Koddan chiqarish" in x['mode']:
                 mirage_decode_uz()
-        if "Morse" in uz['type']:
+        if "Morze" in uz['type']:
             Morse_mode = [
                 inquirer.List(
                     "mode",
@@ -76,7 +76,7 @@ def start_cli():
                 morse_encode_uz()
             elif "Shifrdan chiqarish/Koddan chiqarish" in x['mode']:
                 morse_decode_uz()
-        if "Sizar" in uz['type']:
+        if "Sezar" in uz['type']:
             Caeasar_mode = [
                 inquirer.List(
                     "mode",
@@ -99,7 +99,7 @@ def start_cli():
         inquirer.List(
             "type",
             message=f"{typer.style('Выберите один из методов шифрования и кодирования',fg=typer.colors.RED)}",
-        choices=[f"{typer.style('ХОЛМ',fg=typer.colors.GREEN)}", f"{typer.style('Сизар',fg=typer.colors.GREEN)}", f"{typer.style('Мираж',fg=typer.colors.GREEN)}",f"{typer.style('Морзе',fg=typer.colors.GREEN)}"],
+        choices=[f"{typer.style('ХОЛМ',fg=typer.colors.GREEN)}", f"{typer.style('Цезарь',fg=typer.colors.GREEN)}", f"{typer.style('Мираж',fg=typer.colors.GREEN)}",f"{typer.style('Морзе',fg=typer.colors.GREEN)}"],
         ),
     ]
         ru = inquirer.prompt(cipher_type_ru)
@@ -147,8 +147,8 @@ def start_cli():
             if "Шифрование/Кодирование" in x['mode']:
                 morse_encode_ru()
             elif "Расшифровать/декодировать" in x['mode']:
-                morse_decode_uz()
-        if "Сизар" in ru['type']:
+                morse_decode_ru()
+        if "Цезарь" in ru['type']:
             Caeasar_mode = [
                 inquirer.List(
                     "mode",

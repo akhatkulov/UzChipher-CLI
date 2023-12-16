@@ -96,7 +96,7 @@ def caesar_decode_uz():
             caesar_num = typer.prompt("Shiifrdan chiqarish uchun 1dan 27gacha bo'lgan son yuboring")
             caesar_res = typer.style(caesar_decipher(caesar_txt,caesar_num),fg=typer.colors.BLACK)
             caesar_table = [
-                [f"{typer.style('Shifr matni',fg=typer.colors.GREEN)},"f"{typer.style('Shifr paroli',fg=typer.colors.GREEN)}",f"{typer.style('Natija',fg=typer.colors.GREEN)}"],
+                [f"{typer.style('Shifr matni',fg=typer.colors.GREEN)}",f"{typer.style('Shifr paroli',fg=typer.colors.GREEN)}",f"{typer.style('Natija',fg=typer.colors.GREEN)}"],
                 [f"{typer.style(caesar_txt,fg=typer.colors.BLUE)}",f"{typer.style(caesar_num,fg=typer.colors.RED)}",f"{caesar_res}"],
             ]
             loading_func()

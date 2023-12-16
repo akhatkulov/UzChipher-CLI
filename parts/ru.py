@@ -84,7 +84,7 @@ def caesar_encode_ru():
                 [f"{typer.style(caesar_txt,fg=typer.colors.BLUE)},"f"{typer.style(caesar_num,fg=typer.colors.RED)}",f"{caesar_res}"],
             ]
             loading_func()
-            typer.secho("Ваш текст расшифрован методом «Сизар».",fg=typer.colors.CYAN,bold=True)
+            typer.secho("Ваш текст расшифрован методом Цезарь.",fg=typer.colors.CYAN,bold=True)
             print(tabulate(hill_table,headers="firstrow",tablefmt="psql"))
         except:
             loading_func()
@@ -99,7 +99,7 @@ def caesar_decode_ru():
                 [f"{typer.style(caesar_txt,fg=typer.colors.BLUE)}",f"{typer.style(caesar_num,fg=typer.colors.RED)}",f"{caesar_res}"],
             ]
             loading_func()
-            typer.secho("Ваш текст расшифрован в вашем методе «Сизар»",fg=typer.colors.CYAN,bold=True)
+            typer.secho("Ваш текст расшифрован в вашем методе Цезарь",fg=typer.colors.CYAN,bold=True)
             print(tabulate(hill_table,headers="firstrow",tablefmt="psql"))
         except:
             loading_func()
