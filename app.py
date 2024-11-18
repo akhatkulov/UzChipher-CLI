@@ -23,6 +23,13 @@ def main(x: Optional[str] = typer.Argument('home',help="Section"),mode: Optional
     elif x == "hill" and mode == "m--decode" and lang == "uz":
         hill_decode_uz()
 
+    elif x == "transposition" and mode == "m--encode" and lang == "uz":
+        t_p_encrypt_uz()
+
+    elif x == "transposition" and mode == "m--decode" and lang == "uz":
+        t_p_decrypt_uz()
+
+
     elif x == "morse" and mode == "m--encode" and lang == "uz":
         morse_encode_uz()
     elif x == "morse" and mode == "m--decode" and lang == "uz":

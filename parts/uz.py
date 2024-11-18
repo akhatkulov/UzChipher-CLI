@@ -15,6 +15,43 @@ def loading_func():
             time.sleep(0.1)
         time.sleep(0.3)
 
+def t_p_encrypt_uz():
+    try:
+        t_p = typer.prompt("Shifrlamoqchi bo'lgan matningizni yuboring")
+        t_k = typer.prompt("Shifr uchun kalit raqamini bering")
+
+        t_res = typer.style(tp_encrypt(t_p,int(t_k)),fg=typer.colors.BLUE)
+        t_key = typer.style(t_k,fg=typer.colors.RED)
+
+        t_table = [
+            [typer.style("Asl matn",fg=typer.colors.RED),typer.style("Shifr paroli",fg=typer.colors.GREEN),typer.style("Natija",fg=typer.colors.GREEN)],
+            [typer.style(t_p,fg=typer.colors.BLUE),t_k,t_res]
+        ]
+        loading_func()
+        typer.secho("Sizning matningiz \"Transpostion\" usulida shifrlandi",fg=typer.colors.CYAN,bold=True)
+        print(tabulate(t_table,headers="firstrow",tablefmt="psql"))
+    except Exception as e:
+        typer.secho(f"Xatolik: {e}",fg=typer.colors.RED)
+        exit()
+
+def t_p_decrypt_uz():
+    try:
+        t_p = typer.prompt("Shifrdan chiqarmoqchi bo'lgan matningizni yuboring")
+        t_k = typer.prompt("Shifr uchun kalit raqamini bering")
+
+        t_res = typer.style(tp_decrypt(t_p,int(t_k)),fg=typer.colors.BLUE)
+        t_key = typer.style(t_k,fg=typer.colors.RED)
+
+        t_table = [
+            [typer.style("Shifrlangan matn",fg=typer.colors.RED),typer.style("Shifr paroli",fg=typer.colors.GREEN),typer.style("Natija",fg=typer.colors.GREEN)],
+            [typer.style(t_p,fg=typer.colors.BLUE),t_k,t_res]
+        ]
+        loading_func()
+        typer.secho("Sizning matningiz \"Transpostion\" usulida shifrdan chiqarildi",fg=typer.colors.CYAN,bold=True)
+        print(tabulate(t_table,headers="firstrow",tablefmt="psql"))
+    except Exception as e:
+        typer.secho(f"Xatolik: {e}",fg=typer.colors.RED)
+        exit()
 def hill_encode_uz():
     try:
         hill_txt = typer.prompt("Shiflamoqchi bo'lgan matningizni yuboring")

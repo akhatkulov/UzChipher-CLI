@@ -27,7 +27,7 @@ def start_cli():
         inquirer.List(
             "type",
             message=f"{typer.style('Shifrlash va kodlash usullaridan birini tanlang',fg=typer.colors.RED)}",
-        choices=[f"{typer.style('HILL',fg=typer.colors.GREEN)}", f"{typer.style('Sezar',fg=typer.colors.GREEN)}", f"{typer.style('Mirage',fg=typer.colors.GREEN)}",f"{typer.style('Morze',fg=typer.colors.GREEN)}"],
+        choices=[f"{typer.style('HILL',fg=typer.colors.GREEN)}", f"{typer.style('Sezar',fg=typer.colors.GREEN)}", f"{typer.style('Mirage',fg=typer.colors.GREEN)}",f"{typer.style('Morze',fg=typer.colors.GREEN)}",typer.style("Transposition",fg=typer.colors.GREEN)],
         ),
     ]
         uz = inquirer.prompt(cipher_type_uz)
@@ -46,6 +46,21 @@ def start_cli():
                 hill_encode_uz()
             elif "Shifrdan chiqarish/Koddan chiqarish" in x['mode']:
                 hill_decode_uz()
+        
+        if "Transposition" in uz["type"]:
+            t_mode = [
+                inquirer.List(
+                    "mode",
+                    message=f"{typer.style('Rejimni tanlang',fg=typer.colors.RED)}",
+                    choices = [f"{typer.style('Shifrlash/Kodlash',fg=typer.colors.GREEN)}",f"{typer.style('Shifrdan chiqarish/Koddan chiqarish',fg=typer.colors.GREEN)}"],
+                )
+            ]
+        
+            x = inquirer.prompt(t_mode)
+            if "Shifrlash/Kodlash" in x['mode']:
+                t_p_encrypt_uz()
+            elif "Shifrdan chiqarish/Koddan chiqarish" in x['mode']:
+                t_p_decrypt_uz()
         if "Mirage" in uz['type']:
             Mirage_mode = [
                 inquirer.List(

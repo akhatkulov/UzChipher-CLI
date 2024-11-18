@@ -35,12 +35,3 @@ def morse_to_text(morse_code):
                 text += key
     return text
 
-# # Example usage
-# text = 'HELLO WORLD'
-# morse_code = text_to_morse(text)
-# print(morse_code)
-                                                                                                                                                                                      
-# morse_code = '.... . .-.. .-.. --- / .-- --- .-. .-.. -..'
-# text = morse_to_text(morse_code)
-# print(text)
-
